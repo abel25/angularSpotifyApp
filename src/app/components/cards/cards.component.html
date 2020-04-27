@@ -1,0 +1,14 @@
+<div class="card-columns mt-3 puntero">
+    <div class="card" *ngFor="let song of items" (click)="verArtista(song)">
+      <img class="card-img-top" src='{{song.images | noimage}}' alt="Card image cap">
+      <div class="card-body">
+        <h6 class="card-title">{{song.name}}</h6>
+        <p class="card-text">
+          <span *ngFor="let artist of song.artists" class="badge badge-pill badge-success">{{artist.name}}</span>
+        </p>
+        <p class="card-text"><small>Release date: {{song.release_date}}</small></p>
+        <a class="card-link btn btn-primary btn-block btn-success" href="{{song.external_urls.spotify}}">Listen</a>
+      </div>
+    </div>
+<div>
+
